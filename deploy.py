@@ -27,8 +27,7 @@ module.run()
 out = module.get_output(0)
 
 #convert to numpy array, show and save
-final = out.asnumpy()[0,0,:,:]
-
+final = np.asarray(out.asnumpy()[0,0,:,:] * 255,dtype="uint8")
 cv2.imwrite("output.bmp",final)
 cv2.imshow("test",final)
 cv2.waitKey(0)
